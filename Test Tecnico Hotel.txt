@@ -1,0 +1,35 @@
+Test Tecnico - Hotel
+
+1. 
+Select name, lastname, document_type
+From ospiti
+where document_type = 'CI';
+
+2.
+Select *
+from ospiti
+where YEAR(date_of_birth) > 1988;
+
+3.
+Select *
+from ospiti
+where name LIKE 'D%'
+
+4.
+SELECT SUM(price) AS Totale_incassato
+FROM pagamenti
+where status = 'accepted';
+
+5.
+SELECT MAX(price) as prezzo_massimo_pagato
+FROM pagamenti
+WHERE status = 'accepted';
+
+6.
+SELECT SUM(beds) AS Numero_Posti_Letto
+FROM stanze;
+
+
+
+
+
