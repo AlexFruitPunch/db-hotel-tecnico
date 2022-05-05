@@ -1,0 +1,27 @@
+TABELLA PRENOTAZIONE:
+
+CREATE TABLE [dbo].[Prenotazione]
+(
+    [Numero_Prenotazione] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Stanza_Prenotata] SMALLINT NOT NULL, 
+    [Data] DATE NOT NULL
+)
+
+TABELLA STANZA ESISTENTE
+
+CREATE TABLE [dbo].[Stanza Esistente]
+(
+    [Numero_Stanza] SMALLINT NOT NULL PRIMARY KEY, 
+    [Piano] TINYINT NOT NULL, 
+    [Num_Letti] TINYINT NOT NULL
+)
+
+TABELLA (PONTE) PRENOTAZIONE_STANZA_ESISTENTE
+
+CREATE TABLE [dbo].[Prenotazione_Stanza_Esistente] (
+    [Id_Stanza_Esistente] SMALLINT NOT NULL,
+    [Id_Prenotazione]     INT NOT NULL,
+    CONSTRAINT [chiave_ponte_Stanza_Esistente] FOREIGN KEY ([Id_Stanza_Esistente]) REFERENCES [dbo].[Stanza Esistente] ([Numero_Stanza]), 
+    CONSTRAINT [chiave_ponte_Prenotazione_Stanza_esistente] FOREIGN KEY ([id_Prenotazione]) REFERENCES [Prenotazione]([Numero_Prenotazione])
+);
+
